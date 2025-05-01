@@ -1,103 +1,111 @@
-import Image from "next/image";
+'use client'
+// app/page.tsx (or pages/index.tsx)
+import type { NextPage } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import animationData from '../../public/home.json';
 
-export default function Home() {
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
+const HomePage: NextPage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen font-mono">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="relative w-4/5 bg-[#5edaff] bg-opacity-80 p-12 lg:p-20 flex flex-col justify-end text-gray-800 overflow-hidden">
+      
+      <div className="absolute top-0 left-0 flex items-center">
+    <Image
+      src="/logo.png"
+      alt="Company Logo"
+      width={200}
+      height={200}
+      className="object-contain"
+    />
+
+  </div>
+<header className="absolute top-0 right-0 max-w-8xl px-8 py-4 flex items-center justify-between backdrop-blur-md z-20">
+
+  <nav>
+    <ul className="flex space-x-8 text-gray-800">
+      <li>
+        <Link href="/docs" className="hover:underline">
+          Docs
+        </Link>
+      </li>
+      <li>
+        <Link href="/blog" className="hover:underline">
+          Blog
+        </Link>
+      </li>
+      <li>
+        <Link href="/people" className="hover:underline">
+          People
+        </Link>
+      </li>
+      <li>
+        <Link href="/qna" className="hover:underline">
+          Q&A
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+          <div>
+            <div className="w-64 h-64 mx-auto mb-8">
+              <Lottie animationData={animationData} loop={true} />
+            </div>
+            <h1 className='text-4xl font-bold'> <span className="underline"> wIndexer:</span> A Decentralized Autonomous Incentivized Indexing Layer for Solana</h1>
+          <p className='text-xl'>wIndexer is a new decentralized indexing system built for the high-speed Solana blockchain. It shifts data indexing away from a central point to a network of incentivized participants. By using the Interplanetary Data Machine (IPDM) and the libp2p gossipsub network, wIndexer aims to create a robust and open-source infrastructure capable of handling Solana's demanding data flow. The system combines peer-to-peer networking, efficient data processing, and economic rewards to provide reliable, scalable, and decentralized data indexing with high performance, low latency, and strong data consistency and availability.</p>
+          </div>
+      </div>
+
+
+      <div className="w-1/5 bg-black text-white p-12 lg:p-16 flex flex-col justify-center space-y-8"> {/* Adjust background color, padding, width, and spacing */}
+
+        <div className="space-y-2">
+          <p>Join our community, have prodcuctive conversations, meet great people, engage with us talk about solana. we are waiting for you. join us on </p>
+          <Link href="https://t.me/+MznFxMPcIhM3ZDI1" className="underline hover:text-gray-300">
+            telegram 
+          </Link>
+          
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="space-y-2">
+          <p>Our project is completly Opens Source project, So If you you dev wants to contribute to the project, you can find the repository on </p>
+          <Link href="https://github.com/wind-network" className="underline hover:text-gray-300">
+            Github 
+          </Link>
+        </div>
+
+        <div className="space-y-2">
+          <p>and find contributing guidlines</p>
+          <Link href="https://github.com/wind-network/windexer/blob/main/README.md" className="underline hover:text-gray-300">
+            here
+          </Link>
+        </div>
+
+        <div className="space-y-2">
+          <p>Follow updates on</p>
+          <Link href="https://x.com/windnetwork_" className="underline hover:text-gray-300">
+            twitter 
+          </Link>
+        </div>
+
+        <div className="pt-8 space-y-4">
+          <button className="w-full bg-black text-white border border-white py-3 px-6 text-center hover:bg-gray-800 transition duration-200">
+            API Refrence 
+          </button>
+          <button className="w-full bg-black text-white border border-white py-3 px-6 text-center hover:bg-gray-800 transition duration-200">
+            Get Started
+          </button>
+        </div>
+
+      </div>
     </div>
   );
-}
+};
+
+export default HomePage;
