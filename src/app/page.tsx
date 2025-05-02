@@ -63,7 +63,7 @@ const HomePage: NextPage = () => {
             <span className="underline">wIndexer:</span> A Decentralized Autonomous Incentivized Indexing Layer for Solana
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl">
-            wIndexer is a new decentralized indexing system built for the high-speed Solana blockchain. It shifts data indexing away from a central point to a network of incentivized participants. By using the Interplanetary Data Machine (IPDM) and the libp2p gossipsub network, wIndexer aims to create a robust and open-source infrastructure capable of handling Solana&apos;s demanding data flow. The system combines peer-to-peer networking, efficient data processing, and economic rewards to provide reliable, scalable, and decentralized data indexing with high performance, low latency, and strong data consistency and availability.
+          wIndexer is a new decentralized indexing system built for the high-speed Solana blockchain. It shifts data indexing away from a central point to a network of incentivized participants. By using the Interplanetary Data Machine (IPDM) and the libp2p gossipsub network, wIndexer aims to create a robust and open-source infrastructure capable of handling Solana&apos;s demanding data flow. The system combines peer-to-peer networking, efficient data processing, and economic rewards to provide reliable, scalable, and decentralized data indexing with high performance, low latency, and strong data consistency and availability.
           </p>
         </div>
       </div>
@@ -78,7 +78,7 @@ const HomePage: NextPage = () => {
         </div>
 
         <div className="space-y-2">
-          <p className="text-xs sm:text-sm">Our project is completely Open Source. If you're a dev who wants to contribute to the project, you can find the repository on </p>
+          <p className="text-xs sm:text-sm">Our project is completely Open Source project, So If you are dev and wants to contribute to the project, you can find the repository on </p>
           <Link href="https://github.com/wind-network" className="underline hover:text-gray-300 text-xs sm:text-sm">
             Github 
           </Link>
