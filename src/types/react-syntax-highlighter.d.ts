@@ -1,18 +1,40 @@
 declare module 'react-syntax-highlighter' {
-  export const Prism: any;
-  export default any;
+  import { ComponentType, ReactNode } from 'react';
+  
+  export interface SyntaxHighlighterProps {
+    language?: string;
+    style?: Record<string, unknown>;
+    children?: ReactNode;
+    className?: string;
+    [key: string]: unknown;
+  }
+  
+  export const Prism: ComponentType<SyntaxHighlighterProps>;
+  const SyntaxHighlighter: ComponentType<SyntaxHighlighterProps>;
+  export default SyntaxHighlighter;
 }
 
 declare module 'react-syntax-highlighter/dist/esm/styles/prism' {
-  export const oneDark: any;
+  export const oneDark: Record<string, unknown>;
 }
 
 declare module 'react-syntax-highlighter/dist/cjs' {
-  export const PrismLight: any;
-  export default any;
+  import { ComponentType, ReactNode } from 'react';
+  
+  export interface SyntaxHighlighterProps {
+    language?: string;
+    style?: Record<string, unknown>;
+    children?: ReactNode;
+    className?: string;
+    [key: string]: unknown;
+  }
+  
+  export const PrismLight: ComponentType<SyntaxHighlighterProps>;
+  const SyntaxHighlighter: ComponentType<SyntaxHighlighterProps>;
+  export default SyntaxHighlighter;
 }
 
 declare module 'react-syntax-highlighter/dist/cjs/styles/prism/one-dark' {
-  const style: any;
+  const style: Record<string, unknown>;
   export default style;
 } 

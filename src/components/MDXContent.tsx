@@ -10,45 +10,45 @@ export default function MDXContent({ content }: MDXContentProps) {
     <div className="prose max-w-none prose-gray">
       <ReactMarkdown
         components={{
-          h1: ({ node, ...props }) => (
+          h1: ({ ...props }) => (
             <h1 className="text-3xl font-bold mb-6 border-b pb-2 border-gray-200" {...props} />
           ),
-          h2: ({ node, ...props }) => {
+          h2: ({ ...props }) => {
             const id = props.children?.toString().toLowerCase().replace(/\s+/g, '-');
             return <h2 className="text-2xl font-bold mt-8 mb-4" id={id as string} {...props} />;
           },
-          h3: ({ node, ...props }) => {
+          h3: ({ ...props }) => {
             const id = props.children?.toString().toLowerCase().replace(/\s+/g, '-');
             return <h3 className="text-xl font-bold mt-6 mb-3" id={id as string} {...props} />;
           },
-          p: ({ node, ...props }) => <p className="mb-4" {...props} />,
-          ul: ({ node, ...props }) => <ul className="list-disc pl-6 mb-4" {...props} />,
-          ol: ({ node, ...props }) => <ol className="list-decimal pl-6 mb-4" {...props} />,
-          li: ({ node, ...props }) => <li className="mb-1" {...props} />,
-          a: ({ node, ...props }) => (
+          p: ({ ...props }) => <p className="mb-4" {...props} />,
+          ul: ({ ...props }) => <ul className="list-disc pl-6 mb-4" {...props} />,
+          ol: ({ ...props }) => <ol className="list-decimal pl-6 mb-4" {...props} />,
+          li: ({ ...props }) => <li className="mb-1" {...props} />,
+          a: ({ ...props }) => (
             <a className="text-blue-600 hover:underline" {...props} />
           ),
-          blockquote: ({ node, ...props }) => (
+          blockquote: ({ ...props }) => (
             <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4" {...props} />
           ),
-          table: ({ node, ...props }) => (
+          table: ({ ...props }) => (
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-300 my-4" {...props} />
             </div>
           ),
-          thead: ({ node, ...props }) => <thead className="bg-gray-100" {...props} />,
-          tbody: ({ node, ...props }) => <tbody className="divide-y divide-gray-200" {...props} />,
-          tr: ({ node, ...props }) => <tr {...props} />,
-          th: ({ node, ...props }) => (
+          thead: ({ ...props }) => <thead className="bg-gray-100" {...props} />,
+          tbody: ({ ...props }) => <tbody className="divide-y divide-gray-200" {...props} />,
+          tr: ({ ...props }) => <tr {...props} />,
+          th: ({ ...props }) => (
             <th
               className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
               {...props}
             />
           ),
-          td: ({ node, ...props }) => (
+          td: ({ ...props }) => (
             <td className="px-3 py-4 text-sm text-gray-500" {...props} />
           ),
-          code: ({ node, className, children, ...props }) => {
+          code: ({ className, children, ...props }) => {
             const match = /language-(\w+)/.exec(className || '');
             
             if (match) {
@@ -65,7 +65,7 @@ export default function MDXContent({ content }: MDXContentProps) {
               </code>
             );
           },
-          pre: ({ node, ...props }) => (
+          pre: ({ ...props }) => (
             <div className="overflow-auto my-4">
               <pre {...props} />
             </div>

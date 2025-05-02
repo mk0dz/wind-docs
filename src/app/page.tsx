@@ -58,7 +58,7 @@ const HomePage: NextPage = () => {
               <Lottie animationData={animationData} loop={true} />
             </div>
             <h1 className='text-4xl font-bold'> <span className="underline"> wIndexer:</span> A Decentralized Autonomous Incentivized Indexing Layer for Solana</h1>
-          <p className='text-xl'>wIndexer is a new decentralized indexing system built for the high-speed Solana blockchain. It shifts data indexing away from a central point to a network of incentivized participants. By using the Interplanetary Data Machine (IPDM) and the libp2p gossipsub network, wIndexer aims to create a robust and open-source infrastructure capable of handling Solana's demanding data flow. The system combines peer-to-peer networking, efficient data processing, and economic rewards to provide reliable, scalable, and decentralized data indexing with high performance, low latency, and strong data consistency and availability.</p>
+          <p className='text-xl'>wIndexer is a new decentralized indexing system built for the high-speed Solana blockchain. It shifts data indexing away from a central point to a network of incentivized participants. By using the Interplanetary Data Machine (IPDM) and the libp2p gossipsub network, wIndexer aims to create a robust and open-source infrastructure capable of handling Solana&apos;s demanding data flow. The system combines peer-to-peer networking, efficient data processing, and economic rewards to provide reliable, scalable, and decentralized data indexing with high performance, low latency, and strong data consistency and availability.</p>
           </div>
       </div>
 

@@ -3,9 +3,10 @@ import { getDocContent, getAllDocs } from '@/lib/docs';
 import MDXContent from '@/components/MDXContent';
 
 interface DocsPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export const dynamic = 'force-static';
@@ -17,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 export default async function DocsPage({ params }: DocsPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const content = await getDocContent(slug);
   
   return <MDXContent content={content} />;
