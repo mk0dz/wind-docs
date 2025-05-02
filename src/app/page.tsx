@@ -95,12 +95,16 @@ const HomePage: NextPage = () => {
         </div>
 
         <div className="pt-8 space-y-4">
-          <button className="w-full bg-black text-white border border-white py-3 px-6 text-center hover:bg-gray-800 transition duration-200">
-            API Refrence 
-          </button>
-          <button className="w-full bg-black text-white border border-white py-3 px-6 text-center hover:bg-gray-800 transition duration-200">
-            Get Started
-          </button>
+          <Link href="/docs/api-reference" className="block w-full">
+            <button className="w-full bg-black text-white border border-white py-3 px-6 text-center hover:bg-gray-800 transition duration-200">
+              API Reference
+            </button>
+          </Link>
+          <Link href="/docs" className="block w-full">
+            <button className="w-full bg-black text-white border border-white py-3 px-6 text-center hover:bg-gray-800 transition duration-200">
+              Get Started
+            </button>
+          </Link>
         </div>
 
       </div>
