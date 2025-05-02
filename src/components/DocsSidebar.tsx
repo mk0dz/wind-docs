@@ -17,7 +17,7 @@ export default function DocsSidebar() {
   const pathname = usePathname();
   
   return (
-    <div className="w-64 h-full border-r border-gray-200">
+    <div className="h-screen overflow-hidden lg:block w-64 border-r h-screen border-gray-200">
       <div className="flex flex-col p-4">
         <h2 className="text-lg font-bold mb-4">Documentation</h2>
         <Link className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50" href="/">Home</Link>
